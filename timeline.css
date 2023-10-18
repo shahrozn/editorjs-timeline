@@ -77,17 +77,25 @@
   
   /* Add arrows to the right e-container (pointing left) */
   .e-right::before {
-    content: " ";
+    content: "";
     height: 0;
     position: absolute;
     top: 25px;
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid white;
+    border: medium solid;
     border-width: 10px 10px 10px 0;
+  }
+  .e-right-light::before {
+    border: medium solid #4b4b4b;
+    border-color: transparent #4b4b4b transparent transparent;
+  }
+  .e-right-dark::before {
+    border: medium solid white;
     border-color: transparent white transparent transparent;
   }
+  
   
   /* Fix the circle for e-containers on the right side */
   .e-right::after {

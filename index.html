@@ -31,11 +31,16 @@
             <p>
                 <i>Switch themes under tune after adding a Timeline. Hit Save to see how the content is structured.</i>
             </p>
-            <div class="row mt-5 p-5 bg-light rounded">
+            <div class="row mt-5 p-5 bg-light rounded" id="editorSection">
                 <div class="col-12">
-                    <h4 class="mb-5">
-                        Playground
-                    </h4>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="mb-5 float-start text-dark" id="playgroundHeading">
+                                Playground
+                            </h4>
+                            <button class="float-end btn btn-sm btn-outline-dark" id="backgroundBtn" onclick="toggleBackground()">Toggle Background 🔁</button>
+                        </div>
+                    </div>
                     <div id="editorjs"></div>
                 </div>
             </div>
@@ -56,7 +61,7 @@
         <div class="container">
           <span class="text-body-secondary">
             &copy; <script>document.write(new Date().getFullYear())</script> Timeline Plugin for <a href="https://editorjs.io/" target="_blank">Editor.js</a>
-              • View source @ <a href="https://github.com/shahrozn/editorjs-timeline">shahrozn/timeline-for-editorjs</a>
+              • View source @ <a href="https://github.com/shahrozn/editorjs-timeline">shahrozn/editorjs-timeline</a>
           </span>
         </div>
     </footer>
@@ -69,7 +74,6 @@
     <script>
         const editor = new EditorJS({
             autofocus: true,
-            theme: 'dark',
             tools: {
                 text: Timeline,
             },
@@ -81,9 +85,9 @@
                         id: "Uhd2gNg8UM",
                         type: "text",
                         data: {
-                            title: "Timeline Node Title",
-                            subtitle: "Timeline Node Subtitle",
-                            body: "Timeline Node Content",
+                            title: "Timeline Node Title #1",
+                            subtitle: "October 29, 2077",
+                            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                             theme: 'light'
                         }
                     }
@@ -96,6 +100,23 @@
             editor.save().then(savedData => {
                 output.innerHTML = JSON.stringify(savedData, null, 4);
             })
+        }
+
+        function toggleBackground() {
+            let pg_header = document.getElementById('playgroundHeading');
+            let section = document.getElementById('editorSection');
+            let button = document.getElementById('backgroundBtn');
+
+            if(pg_header.classList.contains('text-dark')) {
+                pg_header.classList = 'float-start mb-5 text-light';
+                section.classList = 'row mt-5 p-5 rounded bg-dark';
+                button.classList = 'float-end btn btn-sm btn-outline-light';
+            }
+            else {
+                pg_header.classList = 'mb-5 float-start text-dark';
+                section.classList = 'row mt-5 p-5 rounded bg-light';
+                button.classList = 'float-end btn btn-sm btn-outline-dark';
+            }
         }
     </script>
 </body>

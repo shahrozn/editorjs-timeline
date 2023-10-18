@@ -89,11 +89,13 @@ class Timeline {
             switch(this.data.theme) {
                 case 'light':
                     divTimeline.classList.add('e-timeline-light')
+                    divContainer.classList.add('e-right-light');
                     divContent.classList.add('e-content-light')
                     break;
                 case 'dark':
                     divTimeline.classList.add('e-timeline-dark'); 
-                    divContent.classList.add('e-content-dark'); 
+                    divContainer.classList.add('e-right-dark'); 
+                    divContent.classList.add('e-content-dark');
                     break;
                 default:
                     break;
@@ -101,6 +103,7 @@ class Timeline {
         }
         else {
             divTimeline.classList.add('e-timeline-dark'); 
+            divContainer.classList.add('e-right-dark'); 
             divContent.classList.add('e-timeline-dark');
         }
 
@@ -133,5 +136,6 @@ class Timeline {
 
         this.wrapper.classList = `e-timeline e-timeline-${theme}`;
         this.wrapper.getElementsByClassName('e-content')[0].classList = `e-content e-content-${theme}`;
+        this.wrapper.getElementsByClassName('e-container')[0].classList = `e-container e-right e-right-${theme}`;
     }
 }

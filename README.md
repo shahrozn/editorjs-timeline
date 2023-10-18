@@ -13,6 +13,12 @@ The design of the timeline is basic and carries it's own styling.  In its curren
 
 Adding consecutive nodes seamlessly merges them into the same timeline if the same theme has been applied to them. 
 
+There are two themes available - Dark and Light. 
+
+![1697644136512](image/README/1697644136512.png "Theme - Dark")
+
+![1697644109040](image/README/1697644109040.png "Theme - Light")
+
 *A demo is available [here](https://shahrozn.github.io/editorjs-timeline/).*
 
 ### Limitations
