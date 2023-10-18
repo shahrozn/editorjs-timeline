@@ -7,7 +7,7 @@ A plugin for Editor.js that allows you to add timelines in your content.
 The design of the timeline is basic and carries it's own styling.  In its current state, each "node" of the timeline has the following data points: 
 
 - Title
-- Substitle (can be used for date/timestamp)
+- Subtitle (can be used for date/timestamp)
 - Content
 - Theme
 
